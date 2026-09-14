@@ -233,3 +233,14 @@ Keep Openrooms simple, modular, understandable, and easy to change.
 
 The immediate objective is to build a convincing exploration prototype, not a
 complete game framework.
+
+## Development environment note
+
+The project is currently developed inside an Oracle VirtualBox VM.
+
+VirtualBox Mouse Integration interferes with relative mouse input used by
+first-person camera control.
+
+When testing mouse-look behavior, disable VirtualBox Mouse Integration.
+Do not modify the player controller to compensate for this VM-specific issue
+unless explicitly requested.

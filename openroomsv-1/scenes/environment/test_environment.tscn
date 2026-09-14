@@ -1,0 +1,114 @@
+[gd_scene load_steps=5 format=3]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_floor"]
+albedo_color = Color(0.38, 0.34, 0.29, 1)
+roughness = 0.9
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_walls"]
+albedo_color = Color(0.72, 0.68, 0.5, 1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ceiling"]
+albedo_color = Color(0.68, 0.68, 0.64, 1)
+roughness = 0.9
+
+[sub_resource type="Environment" id="Environment_test"]
+background_mode = 1
+background_color = Color(0.025, 0.025, 0.03, 1)
+ambient_light_source = 3
+ambient_light_color = Color(0.6, 0.62, 0.68, 1)
+ambient_light_energy = 0.35
+
+[node name="TestEnvironment" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_test")
+
+[node name="TemporaryLight" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-55, -35, 0)
+light_color = Color(0.92, 0.94, 1, 1)
+light_energy = 0.75
+
+[node name="RoomLightLeft" type="OmniLight3D" parent="."]
+position = Vector3(-5, 2.4, -3.5)
+light_color = Color(1, 0.9, 0.72, 1)
+light_energy = 2.0
+omni_range = 9.0
+
+[node name="RoomLightRight" type="OmniLight3D" parent="."]
+position = Vector3(5, 2.4, 3.5)
+light_color = Color(0.78, 0.86, 1, 1)
+light_energy = 2.0
+omni_range = 9.0
+
+[node name="Floor" type="CSGBox3D" parent="."]
+position = Vector3(0, -0.1, 0)
+size = Vector3(18, 0.2, 16)
+material = SubResource("StandardMaterial3D_floor")
+use_collision = true
+
+[node name="Ceiling" type="CSGBox3D" parent="."]
+position = Vector3(0, 3.1, 0)
+size = Vector3(18, 0.2, 16)
+material = SubResource("StandardMaterial3D_ceiling")
+use_collision = true
+
+[node name="NorthWall" type="CSGBox3D" parent="."]
+position = Vector3(0, 1.5, -8)
+size = Vector3(18, 3, 0.25)
+material = SubResource("StandardMaterial3D_walls")
+use_collision = true
+
+[node name="SouthWall" type="CSGBox3D" parent="."]
+position = Vector3(0, 1.5, 8)
+size = Vector3(18, 3, 0.25)
+material = SubResource("StandardMaterial3D_walls")
+use_collision = true
+
+[node name="WestWall" type="CSGBox3D" parent="."]
+position = Vector3(-9, 1.5, 0)
+size = Vector3(0.25, 3, 16)
+material = SubResource("StandardMaterial3D_walls")
+use_collision = true
+
+[node name="EastWall" type="CSGBox3D" parent="."]
+position = Vector3(9, 1.5, 0)
+size = Vector3(0.25, 3, 16)
+material = SubResource("StandardMaterial3D_walls")
+use_collision = true
+
+[node name="CenterWallNorth" type="CSGBox3D" parent="."]
+position = Vector3(0, 1.5, -5)
+size = Vector3(0.25, 3, 6)
+material = SubResource("StandardMaterial3D_walls")
+use_collision = true
+
+[node name="CenterWallSouth" type="CSGBox3D" parent="."]
+position = Vector3(0, 1.5, 5.5)
+size = Vector3(0.25, 3, 5)
+material = SubResource("StandardMaterial3D_walls")
+use_collision = true
+
+[node name="WestRoomWall" type="CSGBox3D" parent="."]
+position = Vector3(-6.25, 1.5, 0)
+size = Vector3(5.5, 3, 0.25)
+material = SubResource("StandardMaterial3D_walls")
+use_collision = true
+
+[node name="WestRoomDoorReturn" type="CSGBox3D" parent="."]
+position = Vector3(-1.5, 1.5, 0)
+size = Vector3(3, 3, 0.25)
+material = SubResource("StandardMaterial3D_walls")
+use_collision = true
+
+[node name="EastRoomWallNorth" type="CSGBox3D" parent="."]
+position = Vector3(4.5, 1.5, -5.5)
+size = Vector3(0.25, 3, 5)
+material = SubResource("StandardMaterial3D_walls")
+use_collision = true
+
+[node name="EastRoomWallSouth" type="CSGBox3D" parent="."]
+position = Vector3(4.5, 1.5, 4.5)
+size = Vector3(0.25, 3, 7)
+material = SubResource("StandardMaterial3D_walls")
+use_collision = true
