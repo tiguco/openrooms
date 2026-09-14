@@ -1,7 +1,6 @@
 # Openrooms
 
-Openrooms is an open-source first-person exploration game and related creative
-project.
+Openrooms is an open-source first-person exploration game.
 
 The project is inspired by liminal spaces and maze-like artificial environments,
 including the general aesthetic associated with the Backrooms, but Openrooms

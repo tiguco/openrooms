@@ -1,3 +1,4 @@
-./openroomsv-1/.godot/
-./openroomsv-1/.tmp
+./game/godot/.godot/
+./game/godot/*.tmp
+./game/*.tmp
 *.tmp
